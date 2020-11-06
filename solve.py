@@ -32,7 +32,8 @@ analysis.add_task('c',name='c')
 
 dt = 0.01
 
+print('Solving KPP equations...')
 while solver.ok:
     solver.step(dt)
-    if solver.iteration % 100 == 0:
-        print('Completed iteration {}'.format(solver.iteration))
+    # if solver.iteration % 100 == 0:
+        # print('Completed iteration {}'.format(solver.iteration))

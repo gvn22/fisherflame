@@ -1,6 +1,7 @@
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 f = h5py.File('./analysis_tasks/analysis.h5','r')
 x = f['/scales/x/1.0'][:]
@@ -9,6 +10,11 @@ s = f['/tasks/s'][:]
 r = f['/tasks/r'][:]
 c = f['/tasks/c'][:]
 f.close()
+
+p = Path('figures/')
+p.mkdir(exist_ok=True)
+
+print('Creating and saving figures...')
 
 fig,ax = plt.subplots()
 plt.plot(t,s)
